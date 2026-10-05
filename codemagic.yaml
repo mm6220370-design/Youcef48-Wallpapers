@@ -7,8 +7,10 @@ workflows:
       flutter: stable
       java: 17
     scripts:
-      - name: Get packages
-        script: flutter pub get
+      - name: Generate Android folder
+        script: |
+          flutter create --platforms=android .
+          flutter pub get
       - name: Build APK
         script: flutter build apk --release
     artifacts:
